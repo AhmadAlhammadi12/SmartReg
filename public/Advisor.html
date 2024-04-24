@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI-Powered Course Registration System</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Registration.html">Registration</a></li>
+                <li><a href="ViewClasses.html">View Classes</a></li>
+                <li><a href="Advisor.html">AI Advisor</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="https://sap.zu.ac.ae/">Student Access Porta</a></li>
+                <li><a href="https://eservices.zu.ac.ae/">Electronic Services</a></li>
+                <li><a href="https://careers.zu.ac.ae/">Internship and Career Porta</a></li>
+                <li><a href="https://arm.zu.ac.ae/">Advising and Risk Management (ARM)</a></li>
+                <li><a href="https://sahim.zu.ac.ae/">SAHIM System</a></li>
+            </ul>
+        </div>
+        <div class="chat-box">
+            <div id="chatMessages" class="chat-messages">
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message here...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputField = document.getElementById('chatInput');
+    
+            // Event listener for the input field to check for Enter key press
+            inputField.addEventListener('keypress', function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent the default action to avoid form submission/reloading page
+                    sendMessage(); // Call sendMessage function when Enter is pressed
+                }
+            });
+    
+            // Function to send messages to server and receive response
+            window.sendMessage = function() {
+                const message = inputField.value;
+                if (message.trim() === '') return; // Do not send empty messages
+                inputField.value = ''; // Clear the input field after sending
+    
+                displayMessage('Student', message); // Display student's message
+    
+                // Fetch API to send data to server and get response
+                fetch('/send-message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    displayMessage('AI Advisor', data.response); // Display AI's response
+                })
+                .catch(error => console.error('Error:', error));
+            };
+    
+            // Function to display messages in chat box
+            function displayMessage(sender, message) {
+                const chatMessages = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chat-message ' + (sender === 'Student' ? 'student-message' : 'ai-message');
+                messageDiv.innerHTML = `<span class="message-label">${sender}:</span><p>${message}</p>`;
+                chatMessages.appendChild(messageDiv);
+                scrollToBottom(); // Scroll to the bottom of the chat after adding a new message
+            }
+    
+            // Function to scroll chat to the bottom
+            function scrollToBottom() {
+                const chatMessages = document.getElementById('chatMessages');
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>

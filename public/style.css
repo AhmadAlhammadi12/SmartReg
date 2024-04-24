@@ -1,0 +1,394 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 20px;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #7d9dc0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+.navbar li a:hover {
+    background-color: #4d7fb4;
+}
+
+.intro-section {
+    background: url('images/Registration.webp') no-repeat center center / cover;
+    color: #000000;
+    text-align: center;
+    padding: 100px 20px;
+    font-weight: 1000;
+}
+
+.services-out {
+    background-color: #d8d3d3;
+    margin: 3%;
+}
+
+.services-out h2 {
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.section-img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto 20px; 
+    width: 300px; 
+}
+
+#about, #services, #benefits {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.benefits-section {
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.benefit-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 30%; 
+    margin-bottom: 30px;
+}
+
+.benefits-heading {
+    text-align: center;
+    width: 100%;
+}
+
+.benefit-icon {
+    width: 120px; 
+    height: auto; 
+    margin-bottom: 15px; 
+}
+
+
+.benefit-text h3, .benefit-text p {
+    margin: 5px 0; 
+}
+
+.benefit-item p {
+    margin: 0; 
+}
+
+.service-box {
+    background-color: #cec9c9;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+    width: calc(20% - 10px);
+    vertical-align: top;
+}
+
+.service-box img {
+    max-width: 80%;
+    height: auto;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-box img:hover {
+    transform: rotateY(20deg);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+}
+
+main {
+    perspective: 1000px; 
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+        
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    width: 40%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.message-label {
+    font-size: 0.8em;
+    margin-right: 10px;
+    color: #0c0c0c;
+}
+
+.student-message {
+    background-color: #007bff;
+    align-self: flex-end;
+    border-radius: 20px 20px 0 20px;
+    margin: 10px;
+    max-width: 70%;
+}
+
+.ai-message {
+    background-color: #e5e5ea;
+    color: black;
+    align-self: flex-start;
+    border-radius: 20px 20px 20px 0;
+    margin: 10px;
+    max-width: 70%;
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px;
+    background-color: #f0f2f5;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.class-time {
+    color: #333;
+}
+
+.break-time {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.checkbox-group {
+    margin-bottom: 20px;
+}
+.checkbox-label {
+    margin-right: 30px;
+    font-weight: normal;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center; /* Stack children vertically */
+    align-items: center; /* Center-align the children */
+    padding: 100px;
+    gap: 60px; /* Space between boxes */
+}
+
+.team-member {
+    width: 300px; /* Fixed width for each box */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.team-member img {
+    width: 100%; /* Make image fill the container */
+    height: 250px;
+    object-fit: cover; /* Ensures the image covers the height fully */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.info h2, .info p {
+    margin: 10px 0 0; /* Spacing for the title and position */
+    color: #333;
+}
+
+
+
+#scheduleResults {
+    width: 80%; /* Adjust width as needed */
+    max-height: 300px; /* Adjust max height as needed */
+    overflow: auto; /* Enable scrolling if content exceeds the height */
+    background-color: #979797; /* Light grey background color */
+    margin: 0 auto; /* Center the div horizontally */
+    padding: 10px; /* Add padding for better readability */
+}
+
+@media (max-width: 768px) {
+    .service-box {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .service-box {
+        width: 100%;
+    }
+}

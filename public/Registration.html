@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI-Powered Course Registration System</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Registration.html">Registration</a></li>
+                <li><a href="ViewClasses.html">View Classes</a></li>
+                <li><a href="Advisor.html">AI Advisor</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="courseScheduleForm">
+        <label for="courseNumber">How many courses do you want to register for this semester?</label>
+        <select id="courseNumber" name="courseNumber">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    
+        <label for="courseNames">Enter the names of the courses:</label>
+        <input type="text" id="courseNames" name="courseNames" placeholder="Example: CIT-490, CIT-499">
+    
+        <label for="preferredDays">Preferred days for each course (separate by commas):</label>
+        <input type="text" id="preferredDays" name="preferredDays" placeholder="Example: MWF for CIT-490, TTh for CIT-499">
+
+        <p>Choose class time preference:</p>
+        <label for="earlyMorning">Early Morning</label>
+        <input type="radio" id="earlyMorning" name="classTimePreference" value="Early Morning">
+
+        <label for="lateMorning">Late Morning</label>
+        <input type="radio" id="lateMorning" name="classTimePreference" value="Late Morning">
+        <br>
+        <br>
+        <button type="button" id="generateScheduleButton">Generate Schedule</button>
+    </form>
+    
+    <div id="scheduleResults"></div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@openai/chatgpt"></script>
+    <script src="GPTScript.js"></script>
+    
+</body>
